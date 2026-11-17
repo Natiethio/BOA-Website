@@ -26,17 +26,17 @@ export default function Service() {
                                 </li>
                                 <li className={`tab-btn-item ${activeIndex == 2 ? "active-btn" : ""}`} onClick={() => handleOnClick(2)} style={{ cursor: 'pointer' }}>
                                     <a className={activeIndex == 2 ? "nav-link active" : "nav-link"} onClick={(e) => { e.preventDefault(); handleOnClick(2); }} style={{ cursor: 'pointer', display: 'block' }}>
-                                        <span>Insurance Policies</span>
+                                        <span>Virtual Banking</span>
                                     </a>
                                 </li>
                                 <li className={`tab-btn-item ${activeIndex == 3 ? "active-btn" : ""}`} onClick={() => handleOnClick(3)} style={{ cursor: 'pointer' }}>
                                     <a className={activeIndex == 3 ? "nav-link active" : "nav-link"} onClick={(e) => { e.preventDefault(); handleOnClick(3); }} style={{ cursor: 'pointer', display: 'block' }}>
-                                        <span>All kind of Loans</span>
+                                        <span>Foreign Currency Account</span>
                                     </a>
                                 </li>
                                 <li className={`tab-btn-item ${activeIndex == 4 ? "active-btn" : ""}`} onClick={() => handleOnClick(4)} style={{ cursor: 'pointer' }}>
                                     <a className={activeIndex == 4 ? "nav-link active" : "nav-link"} onClick={(e) => { e.preventDefault(); handleOnClick(4); }} style={{ cursor: 'pointer', display: 'block' }}>
-                                        <span>Bank Accounts</span>
+                                        <span>Instant Loan</span>
                                     </a>
                                 </li>
                             </ul>
@@ -68,7 +68,7 @@ export default function Service() {
                                     <div className="image-box ml_40">
                                     <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
                                     <figure className="image">
-                                        <img src="assets/images/service/service-1.jpg" alt="" />
+                                        <img src="assets/images/service/digital_1.png" alt="" />
                                     </figure>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@ export default function Service() {
                                     <div className="col-lg-6 col-md-12 col-sm-12 content-column">
                                         <div className="content_block_four">
                                         <div className="content-box mr_110">
-                                            <h2>Insurance Policies</h2>
+                                            <h2>Virtaul Banking</h2>
                                             <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis, suscipit you take action against fraud. See it the Security Center for and Mobile and Online Banking.
                                             </p>
@@ -100,7 +100,7 @@ export default function Service() {
                                         <div className="image-box ml_40">
                                         <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
                                         <figure className="image">
-                                            <img src="assets/images/service/service-2.jpg" alt="" />
+                                            <img src="assets/images/service/virtual.png" alt="" />
                                         </figure>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@ export default function Service() {
                                     <div className="col-lg-6 col-md-12 col-sm-12 content-column">
                                         <div className="content_block_four">
                                             <div className="content-box mr_110">
-                                                <h2>All kind of Loans</h2>
+                                                <h2>FCY Account and Virtual Card</h2>
                                                 <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis, suscipit you take action against fraud. See it the Security Center for and Mobile and Online Banking.
                                                 </p>
@@ -132,7 +132,7 @@ export default function Service() {
                                     <div className="image-box ml_40">
                                     <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
                                     <figure className="image">
-                                        <img src="assets/images/service/service-3.jpg" alt="" />
+                                        <img src="assets/images/service/FCYandvirtualcard.png" alt="" />
                                     </figure>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@ export default function Service() {
                                     <div className="col-lg-6 col-md-12 col-sm-12 content-column">
                                         <div className="content_block_four">
                                             <div className="content-box mr_110">
-                                                <h2>Bank Accounts</h2>
+                                                <h2>Instant Loan</h2>
                                                 <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis, suscipit you take action against fraud. See it the Security Center for and Mobile and Online Banking.
                                                 </p>
@@ -162,7 +162,7 @@ export default function Service() {
                                         <div className="image-box ml_40">
                                         <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
                                         <figure className="image">
-                                            <img src="assets/images/service/service-4.jpg" alt="" />
+                                            <img src="assets/images/service/loan.png" alt="" />
                                         </figure>
                                         </div>
                                     </div>

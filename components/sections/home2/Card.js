@@ -19,9 +19,9 @@ export default function Card() {
                     <div className="col-lg-4 col-md-6 col-sm-12 card-block">
                         <div className="card-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div className="inner-box">
-                            <figure className="image-box"><Link href="/index-2"><img src="assets/images/resource/Infinite card.png" alt="" /></Link></figure>
+                            <figure className="image-box"><Link href="/index-2"><img src="assets/images/resource/BOA Classic International.png" alt="" /></Link></figure>
                             <div className="lower-content">
-                            <h3><Link href="/index-2">Infinite Card</Link></h3>
+                            <h3><Link href="/index-2">International Virtual Card</Link></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis tincidunt</p>
                             <div className="btn-box">
                                 <Link href="/index-2" className="theme-btn btn-two">Apply for Card</Link>

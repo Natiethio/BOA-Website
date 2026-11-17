@@ -36,15 +36,15 @@ export default function Banner() {
             <section className="banner-section p_relative">
                 <Swiper {...swiperOptions} className="banner-carousel">                    
                     <SwiperSlide className="slide-item p_relative">
-                        <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner-1.jpg)' }}></div>
+                        <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner_2.png)' }}></div>
                         <div className="pattern-layer">
                             <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-1.png)' }}></div>
                             <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-2.png)' }}></div>
                         </div>
                         <div className="auto-container">
                             <div className="content-box">
-                                <h2>Open  <span>Current</span> Account Online</h2>
-                                <p>This statistic is based on our average personal current account online opening time from the last 12 months.</p>
+                                <h2>Open <span>FCY</span> Account</h2>
+                                <p>Open a foreign currency account and start investing in international markets using your intenatnal virtual card.</p>
                                 <div className="btn-box">
                                     <Link href="/" className="theme-btn btn-one">
                                     Make an Appointment
@@ -54,36 +54,36 @@ export default function Banner() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="slide-item p_relative">
-                        <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner-2.jpg)' }}></div>
+                        <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner_1.png)' }}></div>
                         <div className="pattern-layer">
                             <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-1.png)' }}></div>
                             <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-2.png)' }}></div>
                         </div>
                         <div className="auto-container">
                             <div className="content-box">
-                                <h2>Open our <span>Current</span> Account Online</h2>
+                                <h2>Instant <span>Merchant</span> Payments</h2>
                                 <p>This statistic is based on our average personal current account online opening time from the last 12 months.</p>
                                 <div className="btn-box">
                                     <Link href="/" className="theme-btn btn-one">
-                                    Make an Appointment
+                                   View More
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className="slide-item p_relative">
-                        <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner-3.jpg)' }}></div>
+                        <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner_3.png)' }}></div>
                         <div className="pattern-layer">
                             <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-1.png)' }}></div>
                             <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-2.png)' }}></div>
                         </div>
                         <div className="auto-container">
                             <div className="content-box">
-                                <h2> Open our <span>Current</span> Account Online </h2>
+                                <h2>Fast <span>Loan</span> In Seconds</h2>
                                 <p>This statistic is based on our average personal current account online opening time from the last 12 months.</p>
                                 <div className="btn-box">
                                     <Link href="/" className="theme-btn btn-one">
-                                    Make an Appointment
+                                    View More
                                     </Link>
                                 </div>
                             </div>
