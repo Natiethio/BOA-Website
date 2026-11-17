@@ -20,7 +20,7 @@ export default function Exchange() {
                         <div className="tab-btn-box p_relative mb_60 scroll-reveal delay-100">
                             <ul className="tab-btns tab-buttons" role="tablist">
                                 <li className={`tab-btn-item ${activeIndex == 1 ? "active-btn" : ""}`} onClick={() => handleOnClick(1)} style={{ cursor: 'pointer' }}>
-                                    <a className={activeIndex == 1 ? "nav-link active" : "nav-link"} onClick={(e) => { e.preventDefault(); handleOnClick(1); }} style={{ cursor: 'pointer', display: 'block' }}>Foreign Currencies</a>
+                                    <a className={activeIndex == 1 ? "nav-link active" : "nav-link"} onClick={(e) => { e.preventDefault(); handleOnClick(1); }} style={{ cursor: 'pointer', display: 'block' }}>View All</a>
                                 </li>
                                 {/* <li className={`tab-btn-item ${activeIndex == 2 ? "active-btn" : ""}`} onClick={() => handleOnClick(2)} style={{ cursor: 'pointer' }}>
                                     <a className={activeIndex == 2 ? "nav-link active" : "nav-link"} onClick={(e) => { e.preventDefault(); handleOnClick(2); }} style={{ cursor: 'pointer', display: 'block' }}>Crypto Currency</a>

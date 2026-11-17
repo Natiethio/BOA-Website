@@ -18,8 +18,8 @@ export default function News() {
                             <div className="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div className="inner-box" style={{ backgroundImage: 'url(assets/images/news/news1.png)' }}>
                                 <div className="content-box">
-                                <span className="post-date"><i className="icon-27"></i>Apr 17, 2022</span>
-                                <h3><Link href="/blog-details">Charity for Heart to Heart Children’s Aid</Link></h3>
+                                <span className="post-date"><i className="icon-27"></i>Oct 17, 2026</span>
+                                <h3><Link href="/blog-details">Charity for Heart to Heart Children’s Aid...</Link></h3>
                                 <ul className="post-info mb_25">
                                     <li><i className="icon-28"></i><Link href="/blog-details">Admin</Link></li>
                                     <li><i className="icon-29"></i>0 Comment</li>
@@ -33,8 +33,8 @@ export default function News() {
                             <div className="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <div className="inner-box" style={{ backgroundImage: 'url(assets/images/news/news2.png)' }}>
                                 <div className="content-box">
-                                    <span className="post-date"><i className="icon-27"></i>Apr 16, 2022</span>
-                                    <h3><Link href="/blog-details">Assistance For Homes & Properties Real Estate</Link></h3>
+                                    <span className="post-date"><i className="icon-27"></i>Nov 10, 2026</span>
+                                    <h3><Link href="/blog-details">Assistance For Homes & Properties Real Estate...</Link></h3>
                                     <ul className="post-info mb_25">
                                     <li><i className="icon-28"></i><Link href="/blog-details">Admin</Link></li>
                                     <li><i className="icon-29"></i>4 Comment</li>
@@ -48,8 +48,8 @@ export default function News() {
                             <div className="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                                 <div className="inner-box" style={{ backgroundImage: 'url(assets/images/news/news3.png)' }}>
                                 <div className="content-box">
-                                    <span className="post-date"><i className="icon-27"></i>Apr 15, 2022</span>
-                                    <h3><Link href="/blog-details">Various departments presented their reports and discussions...</Link></h3>
+                                    <span className="post-date"><i className="icon-27"></i>Apr 15, 2026</span>
+                                    <h3><Link href="/blog-details">Various departments presented their reports...</Link></h3>
                                     <ul className="post-info mb_25">
                                     <li><i className="icon-28"></i><Link href="/blog-details">Admin</Link></li>
                                     <li><i className="icon-29"></i>1 Comment</li>

@@ -12,6 +12,7 @@ import Card from "@/components/sections/home2/Card"
 import Testimonial from "@/components/sections/one-page-home/Testimonial"
 import Subscribe from "@/components/sections/one-page-home/Subscribe"
 import Process from "@/components/sections/home2/Process"
+import Remittance from "@/components/sections/one-page-home/Remittance"
 export default function Home() {
     return (
         <>
@@ -28,6 +29,7 @@ export default function Home() {
                 <App />
                 <Testimonial />
                 <News />
+                <Remittance />
                 <Subscribe />
             </Layout>
         </>

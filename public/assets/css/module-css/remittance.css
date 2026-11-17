@@ -1,0 +1,191 @@
+/** remittance-section **/
+
+.remittance-section {
+  position: relative;
+  padding: 100px 0px 90px;
+  background: #f8f9fb;
+}
+
+.remittance-section .sec-title {
+  margin-bottom: 55px;
+}
+
+.remittance-section .sec-title h6 {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--theme-color);
+  margin-bottom: 14px;
+}
+
+.remittance-section .sec-title h2 {
+  display: block;
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 800;
+  color: var(--secondary-color, #0A0F20);
+}
+
+.remittance-section .sec-title h2 span {
+  color: var(--theme-color);
+}
+
+.remittance-section .sec-title p {
+  position: relative;
+  font-size: 17px;
+  line-height: 30px;
+  color: #666;
+  margin-top: 16px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/** slider outer — matches auto-container max-width so left/right margins are identical to other sections **/
+
+.remittance-slider-outer {
+  /* Same max-width as .auto-container */
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  /* overflow hidden clips the sliding track horizontally
+     Extra top/bottom padding prevents the hover lift from being cropped */
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* Fade the first and last ~10% toward transparent */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/** sliding track **/
+
+.remittance-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  animation: remittanceScroll 32s linear infinite;
+}
+
+.remittance-slider-outer:hover .remittance-track {
+  animation-play-state: paused;
+}
+
+@keyframes remittanceScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/** card **/
+
+.remittance-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px 30px 20px;
+  min-width: 178px;
+  max-width: 178px;
+  height: 140px;
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.07);
+  border: 1.5px solid #f0f0f0;
+  transition: all 350ms ease;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.remittance-card:hover {
+  border-color: var(--theme-color);
+  box-shadow: 0px 12px 45px rgba(241, 171, 21, 0.22);
+  transform: translateY(-6px);
+}
+
+.remittance-card .logo-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.remittance-card img {
+  max-height: 54px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(25%);
+  transition: filter 350ms ease;
+}
+
+.remittance-card:hover img {
+  filter: grayscale(0%);
+}
+
+.remittance-card .partner-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 12px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/** decorative shape **/
+
+.remittance-section .shape-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/** responsive **/
+
+@media only screen and (max-width: 991px) {
+  .remittance-section .sec-title h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .remittance-section {
+    padding: 70px 0px 60px;
+  }
+
+  .remittance-section .sec-title h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .remittance-card {
+    min-width: 148px;
+    max-width: 148px;
+    padding: 20px 20px 16px;
+    height: 126px;
+  }
+
+  .remittance-card img {
+    max-height: 44px;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .remittance-card {
+    min-width: 128px;
+    max-width: 128px;
+  }
+}

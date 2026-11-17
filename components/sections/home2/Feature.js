@@ -12,7 +12,7 @@ export default function Feature() {
                     <div className="col-lg-4 col-md-12 col-sm-12 title-column">
                         <div className="sec-title light">
                         <h6>Benefits</h6>
-                        <h2>Get More <span>Benefits</span>With our Virtaul Banking Services.</h2>
+                        <h2>Get More <span>Benefits With </span> Virtual Banking.</h2>
                         </div>
                     </div>
                     <div className="col-lg-8 col-md-12 col-sm-12 content-column">
