@@ -38,8 +38,8 @@ export default function Banner() {
                     <SwiperSlide className="slide-item p_relative">
                         <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/banner/banner_2.png)' }}></div>
                         <div className="pattern-layer">
-                            <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-1.png)' }}></div>
-                            <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-2.png)' }}></div>
+                            {/* <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-1.png)' }}></div> */}
+                            {/* <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-2.png)' }}></div> */}
                         </div>
                         <div className="auto-container">
                             <div className="content-box">
@@ -47,7 +47,7 @@ export default function Banner() {
                                 <p>Open a foreign currency account and start investing in international markets using your intenatnal virtual card.</p>
                                 <div className="btn-box">
                                     <Link href="/" className="theme-btn btn-one">
-                                    Make an Appointment
+                                    Discover More
                                     </Link>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@ export default function Banner() {
                                 <p>This statistic is based on our average personal current account online opening time from the last 12 months.</p>
                                 <div className="btn-box">
                                     <Link href="/" className="theme-btn btn-one">
-                                   View More
+                                    Discover More
                                     </Link>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export default function Banner() {
                                 <p>This statistic is based on our average personal current account online opening time from the last 12 months.</p>
                                 <div className="btn-box">
                                     <Link href="/" className="theme-btn btn-one">
-                                    View More
+                                     Discover More
                                     </Link>
                                 </div>
                             </div>
