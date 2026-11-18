@@ -12,7 +12,7 @@ import Header2 from './header/Header2'
 import Header3 from "./header/Header3"
 import Header4 from "./header/Header4"
 
-export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, children, wrapperCls }) {
+export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, breadcrumbBg, breadcrumbCls, children, wrapperCls }) {
     const [scroll, setScroll] = useState(0)
     // Mobile Menu
     const [isMobileMenu, setMobileMenu] = useState(false)
@@ -58,7 +58,13 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
                 <Sidebar isSidebar={isSidebar} handleSidebar={handleSidebar} />
                 
 
-                {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} />}
+                {breadcrumbTitle && (
+                    <Breadcrumb 
+                        breadcrumbTitle={breadcrumbTitle} 
+                        bgImage={breadcrumbBg} 
+                        className={breadcrumbCls} 
+                    />
+                )}
 
                 {children}
 

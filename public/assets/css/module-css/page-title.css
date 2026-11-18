@@ -6,6 +6,11 @@
   padding: 137px 0px;
 }
 
+.page-title.about-page-hero{
+  padding: 220px 0px 200px;
+  min-height: 520px;
+}
+
 .page-title .bg-layer{
   position: absolute;
   left: 0px;
@@ -131,6 +136,11 @@
 
   .page-title{
     padding: 90px 0px;
+  }
+
+  .page-title.about-page-hero{
+    padding: 140px 0px 120px;
+    min-height: auto;
   }
 }
 

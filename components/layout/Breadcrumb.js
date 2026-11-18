@@ -1,10 +1,14 @@
 import Link from "next/link"
 
-export default function Breadcrumb({ breadcrumbTitle }) {
+export default function Breadcrumb({ breadcrumbTitle, bgImage, className }) {
+    const isAbout = breadcrumbTitle?.toLowerCase().includes("about")
+    const background = bgImage || (isAbout ? "assets/images/background/aboutus.png" : "assets/images/background/page-title.jpg")
+    const heroClass = className || (isAbout ? "about-page-hero" : "")
+
     return (
         <>
-            <section className="page-title centred">
-                <div className="bg-layer" style={{ backgroundImage: 'url(assets/images/background/page-title.jpg)' }}></div>
+            <section className={`page-title centred ${heroClass}`}>
+                <div className="bg-layer" style={{ backgroundImage: `url(${background})` }}></div>
                 <div className="pattern-layer">
                     <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-18.png)' }}></div>
                     <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-17.png)' }}></div>
