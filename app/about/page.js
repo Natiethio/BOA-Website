@@ -3,6 +3,7 @@ import AtGlance from "@/components/sections/about/AtGlance"
 import MissionVision from "@/components/sections/about/MissionVision"
 import CoreValues from "@/components/sections/about/CoreValues"
 import Journey from "@/components/sections/about/Journey"
+import BankFacts from "@/components/sections/about/BankFacts"
 
 export default function AboutPage() {
     return (
@@ -25,6 +26,9 @@ export default function AboutPage() {
 
                 {/* The Journey — Timeline */}
                 <Journey />
+
+                {/* Key Figures & Impact (Grid) */}
+                <BankFacts />
 
             </Layout>
         </>

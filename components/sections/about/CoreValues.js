@@ -22,7 +22,7 @@ const values = [
         desc: 'We act ethically, honestly, openly and fairly with all our stakeholders.',
     },
     {
-        icon: 'icon-11',
+        icon: 'assets/images/icons/support.png',
         title: 'Teamwork',
         desc: 'We work together in a collaborative environment.',
     },

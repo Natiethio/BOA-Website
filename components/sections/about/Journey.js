@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -13,7 +13,7 @@ const milestones = [
     },
     {
         year: '2005',
-        stat: '100',
+        stat: '100 Branches',
         title: 'Reached 100 branches nationwide',
         desc: 'Expanded our reach across Ethiopia',
         icon: 'icon-6',
@@ -27,7 +27,7 @@ const milestones = [
     },
     {
         year: '2015',
-        stat: '500',
+        stat: '500 Branches',
         title: 'Expanded to 500 branches',
         desc: "Became one of Ethiopia's largest bank networks",
         icon: 'icon-8',
@@ -52,14 +52,28 @@ export default function Journey() {
     const [swiperInstance, setSwiperInstance] = useState(null)
     const [activeIndex, setActiveIndex] = useState(0)
     const [isHovered, setIsHovered] = useState(false)
+    const [isPaused, setIsPaused] = useState(false)
+    const activeIndexRef = useRef(0)
+
+    useEffect(() => {
+        activeIndexRef.current = activeIndex
+    }, [activeIndex])
 
     // Smoothly slide Swiper so the active card is comfortably in view
     const slideToMilestone = (index, swiper = swiperInstance) => {
         if (!swiper) return
+        const isMobileOrTablet = typeof window !== 'undefined' ? window.innerWidth < 992 : false
         const maxSlide = swiper.snapGrid ? swiper.snapGrid.length - 1 : milestones.length - 1
-        // On desktop (4 visible), slide 0 shows [0,1,2,3], slide 1 shows [1,2,3,4], slide 2 shows [2,3,4,5]
-        const target = Math.max(0, Math.min(index <= 1 ? 0 : index - 1, maxSlide))
-        swiper.slideTo(target, 700)
+
+        let target
+        if (isMobileOrTablet) {
+            // On mobile / tablet, slide directly to the active milestone card
+            target = Math.max(0, Math.min(index, maxSlide))
+        } else {
+            // On desktop (4 visible), slide 0 shows [0,1,2,3], slide 1 shows [1,2,3,4], slide 2 shows [2,3,4,5]
+            target = Math.max(0, Math.min(index <= 1 ? 0 : index - 1, maxSlide))
+        }
+        swiper.slideTo(target, 600)
     }
 
     const selectMilestone = (index) => {
@@ -77,20 +91,18 @@ export default function Journey() {
         selectMilestone(prev)
     }
 
-    // Auto-advance through milestones (1996 -> 2005 -> ... -> 2024 -> 1996 loop/reverse)
+    // Auto-advance through milestones every 6 seconds (looping 1996 -> 2005 -> ... -> 2024 -> 1996)
+    // Pauses only when the user hovers over or clicks a card
     useEffect(() => {
-        if (isHovered) return
+        if (isHovered || isPaused) return
 
         const timer = setInterval(() => {
-            setActiveIndex((prev) => {
-                const next = (prev + 1) % milestones.length
-                slideToMilestone(next)
-                return next
-            })
-        }, 4000)
+            const next = (activeIndexRef.current + 1) % milestones.length
+            selectMilestone(next)
+        }, 6000)
 
         return () => clearInterval(timer)
-    }, [swiperInstance, isHovered])
+    }, [swiperInstance, isHovered, isPaused])
 
     const progressWidth = (activeIndex / (milestones.length - 1)) * 100
 
@@ -99,8 +111,6 @@ export default function Journey() {
             <section
                 className="journey-section pt_110 pb_100"
                 id="journey"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
             >
                 <div className="auto-container">
                     {/* Section Header */}
@@ -139,25 +149,36 @@ export default function Journey() {
                 </div>
 
                 {/* Horizontally Scrollable Cards Outer Container */}
-                <div className="journey-slider-outer">
+                <div
+                    className="journey-slider-outer"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    onTouchStart={() => setIsHovered(true)}
+                    onTouchEnd={() => setIsHovered(false)}
+                >
                     <Swiper
                         modules={[Navigation]}
                         onSwiper={setSwiperInstance}
+                        onSlideChange={(swiper) => {
+                            if (typeof window !== 'undefined' && window.innerWidth < 992) {
+                                setActiveIndex(swiper.activeIndex)
+                            }
+                        }}
                         slidesPerView={1.15}
-                        spaceBetween={20}
-                        speed={700}
+                        spaceBetween={16}
+                        speed={600}
                         grabCursor={true}
                         breakpoints={{
                             576: {
-                                slidesPerView: 1.8,
-                                spaceBetween: 20,
+                                slidesPerView: 1.6,
+                                spaceBetween: 18,
                             },
                             768: {
-                                slidesPerView: 2.4,
-                                spaceBetween: 24,
+                                slidesPerView: 2.2,
+                                spaceBetween: 20,
                             },
-                            1024: {
-                                slidesPerView: 3.2,
+                            992: {
+                                slidesPerView: 3.1,
                                 spaceBetween: 24,
                             },
                             1200: {
@@ -173,7 +194,12 @@ export default function Journey() {
                                 <SwiperSlide key={idx} className="journey-slide">
                                     <div
                                         className={`journey-card ${isActive ? 'is-active' : ''}`}
-                                        onClick={() => selectMilestone(idx)}
+                                        onClick={() => {
+                                            selectMilestone(idx)
+                                            setIsPaused(true)
+                                        }}
+                                        onMouseEnter={() => setIsHovered(true)}
+                                        onMouseLeave={() => setIsHovered(false)}
                                     >
                                         {/* Icon Box */}
                                         <div className="icon-box">
@@ -210,7 +236,7 @@ export default function Journey() {
                             aria-label="Previous milestone"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="m15 18-6-6 6-6"/>
+                                <path d="m15 18-6-6 6-6" />
                             </svg>
                         </button>
                         <button
@@ -220,7 +246,7 @@ export default function Journey() {
                             aria-label="Next milestone"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="m9 18 6-6-6-6"/>
+                                <path d="m9 18 6-6-6-6" />
                             </svg>
                         </button>
                     </div>

@@ -10,7 +10,7 @@ export default function About() {
                     <div className="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div className="image_block_one scroll-reveal-left">
                         <div className="image-box pr_90 mr_40">
-                            <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
+                            {/* <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div> */}
                             <figure className="image"><img src="assets/images/resource/about2.png" alt="" /></figure>
                             {/* <div className="rating-box scroll-reveal delay-200">
                             <ul className="rating mb_5 clearfix">

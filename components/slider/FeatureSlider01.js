@@ -61,7 +61,7 @@ export default function MapSlider1() {
                     <div className="feature-block-two">
                         <div className="inner-box">
                             <div className="icon-box"><i className="icon-7"></i></div>
-                            <h3><Link href="/index-2">Low Processing Fee</Link></h3>
+                            <h3><Link href="/index-2">24/7 Service</Link></h3>
                             <p>Tortor neque sed tellus estianian eget dui id ante tristique morever tristique dolor.</p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ export default function MapSlider1() {
                     <div className="feature-block-two">
                         <div className="inner-box">
                             <div className="icon-box"><i className="icon-8"></i></div>
-                            <h3><Link href="/index-2">Fast Loans Approval</Link></h3>
+                            <h3><Link href="/index-2">Virtual Banking</Link></h3>
                             <p>Tortor neque sed tellus estianian eget dui id ante tristique morever tristique dolor.</p>
                         </div>
                     </div>
@@ -79,7 +79,16 @@ export default function MapSlider1() {
                     <div className="feature-block-two">
                         <div className="inner-box">
                             <div className="icon-box"><i className="icon-8"></i></div>
-                            <h3><Link href="/index-2">Fast Loans Approval</Link></h3>
+                            <h3><Link href="/index-2">Paperless Service</Link></h3>
+                            <p>Tortor neque sed tellus estianian eget dui id ante tristique morever tristique dolor.</p>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide className="inner-box">
+                    <div className="feature-block-two">
+                        <div className="inner-box">
+                            <div className="icon-box"><i className="icon-8"></i></div>
+                            <h3><Link href="/index-2">Conventional Robot</Link></h3>
                             <p>Tortor neque sed tellus estianian eget dui id ante tristique morever tristique dolor.</p>
                         </div>
                     </div>

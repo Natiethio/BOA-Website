@@ -543,7 +543,7 @@
 
 .journey-card .card-year {
   display: inline-block;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 800;
   color: var(--theme-color);
   margin-bottom: 6px;
@@ -630,12 +630,145 @@
 }
 
 /* ==============================
-   Responsive Styles
+   Bank Facts & Key Figures Section
+   ============================== */
+
+.about-facts-section {
+  position: relative;
+  background: #f8fafc;
+  padding: 110px 0 100px;
+  border-top: 1px solid #f0f2f5;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.fact-card {
+  position: relative;
+  height: 100%;
+}
+
+.fact-card-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: #ffffff;
+  border: 1.5px solid #edf0f5;
+  border-radius: 18px;
+  padding: 34px 28px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.fact-card-inner:hover {
+  transform: translateY(-5px);
+  border-color: var(--theme-color);
+  box-shadow: 0 16px 40px rgba(241, 171, 21, 0.12);
+}
+
+.fact-card-inner .icon-box {
+  width: 66px;
+  height: 66px;
+  border-radius: 16px;
+  background: rgba(241, 171, 21, 0.12);
+  color: var(--theme-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+  transition: all 400ms ease;
+}
+
+.fact-card-inner:hover .icon-box {
+  background: var(--theme-color);
+  color: #000000;
+  transform: scale(1.08);
+}
+
+.fact-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.fact-count-box {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.fact-counter-number {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #0A0F20;
+  font-family: var(--manrope);
+  letter-spacing: -0.5px;
+  transition: color 300ms ease;
+}
+
+.fact-counter-number.is-highlight {
+  color: var(--theme-color);
+}
+
+.fact-suffix {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--theme-color);
+  margin-left: 2px;
+}
+
+.fact-counter-number.is-highlight .fact-suffix {
+  color: var(--theme-color);
+}
+
+.fact-label {
+  font-size: 15.5px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0;
+  transition: color 300ms ease;
+}
+
+.fact-card-inner:hover .fact-label {
+  color: #0A0F20;
+}
+
+/* ==============================
+   Responsive Styles (Mobile First & Adaptive)
    ============================== */
 
 @media only screen and (max-width: 1200px) {
   .cv-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .fact-counter-number {
+    font-size: 30px;
+  }
+
+  .fact-card-inner {
+    padding: 28px 22px;
+    gap: 18px;
+  }
+
+  .fact-card-inner .icon-box {
+    width: 58px;
+    height: 58px;
+    font-size: 26px;
   }
 }
 
@@ -643,51 +776,268 @@
   .cv-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .glance-content-box {
+    padding-left: 0;
+    margin-top: 35px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
+  /* At Glance Section */
+  .at-glance-section {
+    padding: 60px 0 50px;
+  }
+
+  .glance-image-wrapper {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .glance-image-box img {
+    height: 250px;
+  }
+
+  .glance-floating-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: -25px auto 20px;
+    width: fit-content;
+    max-width: 92%;
+    animation: none;
+    padding: 12px 18px;
+    gap: 12px;
+  }
+
+  .glance-floating-badge .badge-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .glance-floating-badge .badge-title {
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  /* Mission & Vision Section */
   .mv-card__inner {
-    padding: 36px 28px 32px;
+    padding: 32px 22px 28px;
+  }
+
+  .mv-card__inner .icon-box {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
 
   .mv-card__inner h3 {
-    font-size: 22px;
+    font-size: 21px;
+    margin-bottom: 12px;
+  }
+
+  .mv-card__inner p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  /* Journey Timeline Navigation Bar */
+  .journey-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .journey-section .sec-title {
+    margin-bottom: 30px !important;
   }
 
   .journey-timeline-bar {
-    padding: 10px 10px 20px;
-    margin-bottom: 35px;
+    padding: 8px 6px 16px;
+    margin-bottom: 25px;
+    max-width: 100%;
   }
 
   .journey-timeline-track {
-    left: 20px;
-    right: 20px;
+    top: 16px;
+    left: 18px;
+    right: 18px;
+    height: 2px;
   }
 
-  .journey-node-btn .node-year {
-    font-size: 12px;
+  .journey-node-btn {
+    padding: 2px;
   }
 
   .journey-node-btn .node-dot {
     width: 14px;
     height: 14px;
+    margin-bottom: 6px;
+  }
+
+  .journey-node-btn.is-active .node-dot {
+    box-shadow: 0 0 0 4px rgba(241, 171, 21, 0.3);
+  }
+
+  .journey-node-btn .node-year {
+    font-size: 11.5px;
+  }
+
+  /* Journey Cards on Mobile */
+  .journey-slider-outer {
+    padding: 5px 8px 20px;
   }
 
   .journey-card {
-    padding: 26px 20px 24px;
+    padding: 22px 18px 20px;
+    min-height: 260px;
+    border-radius: 16px;
+  }
+
+  .journey-card .icon-box {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .journey-card .card-year {
+    font-size: 15px;
+    margin-bottom: 4px;
   }
 
   .journey-card .card-stat {
-    font-size: 28px;
+    font-size: 25px;
+    line-height: 1.15;
+    margin-bottom: 6px;
   }
 
   .journey-card h4 {
     font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
+
+  .journey-card p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .journey-nav-wrapper {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .journey-nav-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Bank Facts on Mobile */
+  .about-facts-section {
+    padding: 60px 0 55px;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fact-card-inner {
+    padding: 22px 20px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
+  .fact-card-inner .icon-box {
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
+    border-radius: 14px;
+  }
+
+  .fact-counter-number {
+    font-size: 28px;
+  }
+
+  .fact-suffix {
+    font-size: 22px;
+  }
+
+  .fact-label {
+    font-size: 14px;
   }
 }
 
 @media only screen and (max-width: 599px) {
   .cv-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cv-card__inner {
+    padding: 28px 18px 24px;
+  }
+
+  .cv-card__inner .icon-box {
+    width: 58px;
+    height: 58px;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .cv-card__inner h4 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .cv-card__inner p {
+    font-size: 13.5px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .journey-timeline-bar {
+    padding: 6px 2px 14px;
+  }
+
+  .journey-timeline-track {
+    top: 15px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .journey-node-btn .node-dot {
+    width: 12px;
+    height: 12px;
+    margin-bottom: 5px;
+  }
+
+  .journey-node-btn .node-year {
+    font-size: 10.5px;
+  }
+
+  .fact-counter-number {
+    font-size: 23px;
+  }
+
+  .fact-card-inner {
+    padding: 18px 14px;
+    gap: 14px;
+  }
+
+  .fact-card-inner .icon-box {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    border-radius: 12px;
   }
 }
