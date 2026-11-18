@@ -5,7 +5,8 @@
 .cards-section {
   position: relative;
   background: #ffffff;
-  padding: 100px 0 110px;
+  margin-top: 105px;
+  padding: 50px 0 120px;
   overflow: hidden;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .cards-info .sec-title h6 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -53,90 +54,130 @@
 }
 
 .cards-info .lead-text {
-  font-size: 16.5px;
-  line-height: 1.7;
+  font-size: 15.5px;
+  line-height: 1.65;
   color: #5f6670;
-  margin: 0 0 34px;
+  margin: 0 0 20px;
 }
 
-.card-contact-item {
+.contact-lead-note {
+  font-size: 13.5px;
+  line-height: 20px;
+  color: #71717a;
+  margin-bottom: 22px;
+  margin-top: 30px;
+}
+
+/* Horizontal Contact Row */
+.card-contact-row {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 0;
-  border-top: 1px solid #e8e6df;
+  gap: 0;
+  padding: 6px 0 10px;
 }
 
-.card-contact-item:last-of-type {
-  border-bottom: 1px solid #e8e6df;
+.card-contact-row .card-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.card-contact-row .contact-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #e2e4e8;
+  flex-shrink: 0;
+  margin: 0 28px;
 }
 
 .card-contact-item .contact-icon {
   flex: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: #fdf3d8;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #c98a00;
+  transition: all 0.3s ease;
+}
+
+.card-contact-item:hover .contact-icon {
+  background: var(--theme-color);
+  color: #000000;
+  transform: scale(1.05);
 }
 
 .card-contact-item .contact-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   stroke: currentColor;
   fill: none;
-  stroke-width: 1.8;
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .card-contact-item .contact-details small {
   display: block;
-  font-size: 13.5px;
-  color: #5f6670;
-  line-height: 1.4;
-  margin-bottom: 2px;
+  font-size: 12px;
+  color: #71717a;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .card-contact-item .contact-details b {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #0A0F20;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .card-contact-item .contact-details b a {
   color: #0A0F20;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .card-contact-item .contact-details b a:hover {
   color: var(--theme-color);
 }
 
+/* Redesigned Request Card Button (Gold Theme Button) */
 .request-card-btn {
-  margin-top: 34px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
   height: 54px;
-  padding: 0 22px 0 28px;
-  border-radius: 999px;
-  background: #0A0F20;
-  color: #ffffff !important;
-  font-weight: 700;
+  padding: 0 32px;
+  border-radius: 50px;
+  background: var(--theme-color); /* #f1ab15 */
+  color: #0A0F20 !important;
+  font-weight: 800;
   font-size: 16px;
+  letter-spacing: 0.2px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(241, 171, 21, 0.38);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid var(--theme-color);
 }
 
 .request-card-btn:hover {
-  background: var(--theme-color);
-  color: #0A0F20 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(241, 171, 21, 0.3);
+  background: #0A0F20;
+  border-color: #0A0F20;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(10, 15, 32, 0.22);
 }
 
 .request-card-btn svg {
@@ -151,7 +192,7 @@
 }
 
 .request-card-btn:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* ---------- Right: Animated Stack Column ---------- */
@@ -339,6 +380,10 @@
 
 /* Responsive */
 @media (max-width: 991px) {
+  .cards-section {
+    margin-top: 60px;
+    padding: 40px 0 80px;
+  }
   .cards-wrapper {
     flex-direction: column;
     align-items: stretch;
@@ -355,9 +400,68 @@
   }
 }
 
+@media (max-width: 650px) {
+  .cards-wrapper {
+    gap: 36px;
+  }
+  .cards-info .sec-title {
+    margin-bottom: 14px;
+  }
+  .cards-info .sec-title h6 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .cards-info .sec-title h2 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .cards-info .lead-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 14px;
+  }
+  .contact-lead-note {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 100px;
+  }
+  .card-contact-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 6px 0 10px;
+  }
+  .card-contact-row .card-contact-item {
+    width: 100%;
+    flex: none;
+  }
+  .card-contact-row .contact-divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 4px 0;
+    background-color: #eaecf0;
+  }
+  .cards-info .btn-box {
+    margin-top: 20px !important;
+  }
+  .request-card-btn {
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 576px) {
   .cards-section {
-    padding: 60px 0;
+    margin-top: 40px;
+    padding: 30px 0 60px;
+  }
+  .cards-info .sec-title h2 {
+    font-size: 24px;
   }
   .stack-card {
     padding: 8px;

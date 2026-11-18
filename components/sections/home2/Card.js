@@ -5,28 +5,28 @@ import Link from 'next/link'
 const CARDS = [
     {
         id: 1,
-        name: "International Virtual Card",
-        sub: "Visa Debit · Virtual",
-        image: "assets/images/resource/BOA Classic International.png",
+        name: "International",
+        sub: "Visa Debit · International",
+        image: "assets/images/resource/BOA_Classic International.png",
         link: "/contact",
     },
     {
         id: 2,
-        name: "Signature Card",
-        sub: "Visa Debit · Signature",
-        image: "assets/images/resource/Signature Card.png",
+        name: "Platinum",
+        sub: "Visa Debit · Platinum",
+        image: "assets/images/resource/platinumcard.png",
         link: "/contact",
     },
     {
         id: 3,
-        name: "Classic Card",
+        name: "Classic",
         sub: "Visa Debit · Classic",
         image: "assets/images/resource/classiccard.png",
         link: "/contact",
     },
     {
         id: 4,
-        name: "Gold Card",
+        name: "Gold",
         sub: "Visa Debit · Gold",
         image: "assets/images/resource/Gold card.jpg",
         link: "/contact",
@@ -229,40 +229,53 @@ export default function Card() {
                         </div>
                         <p className="lead-text">
                             Discover Bank of Abyssinia cards designed to make everyday payments easier, safer, and more convenient.
-                            Explore our card options and choose the one that best suits your financial needs and lifestyle.
+                            Explore and choose the one that best suits your financial needs and lifestyle.
                         </p>
 
-                        <div className="card-contact-item">
-                            <div className="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
-                                </svg>
+                        <p className="contact-lead-note">
+                            For any card-related inquiries, reach us directly or visit your nearest branch:
+                        </p>
+
+                        {/* Horizontal Contact Row: Phone & Email */}
+                        <div className="card-contact-row">
+                            <div className="card-contact-item">
+                                <div className="contact-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
+                                    </svg>
+                                </div>
+                                <div className="contact-details">
+                                    <small>Call Support</small>
+                                    <b><a href="tel:8397">8397</a></b>
+                                </div>
                             </div>
-                            <div className="contact-details">
-                                <small>For any card-related issues, visit your nearest branch or reach us at</small>
-                                <b><a href="tel:8397">8397</a></b>
+
+                            <div className="contact-divider"></div>
+
+                            <div className="card-contact-item">
+                                <div className="contact-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                                        <path d="M3 7l9 6 9-6" />
+                                    </svg>
+                                </div>
+                                <div className="contact-details">
+                                    <small>Email Support</small>
+                                    <b><a href="mailto:info@bankofabyssinia.com">info@bankofabyssinia.com</a></b>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="card-contact-item">
-                            <div className="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                                    <path d="M3 7l9 6 9-6" />
-                                </svg>
-                            </div>
-                            <div className="contact-details">
-                                <b><a href="mailto:info@bankofabyssinia.com">info@bankofabyssinia.com</a></b>
-                            </div>
+                        {/* Request Card Button */}
+                        <div className="btn-box mt_35">
+                            <Link className="request-card-btn" href="/contact">
+                                <span>Request Your Card</span>
+                                {/* <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="9.5" />
+                                    <path d="M8.5 12h7m-3-3l3 3-3 3" />
+                                </svg> */}
+                            </Link>
                         </div>
-
-                        <Link className="request-card-btn" href="/contact">
-                            Request Your Card
-                            <svg viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="9.5" />
-                                <path d="M8.5 12h7m-3-3l3 3-3 3" />
-                            </svg>
-                        </Link>
                     </div>
 
                     {/* RIGHT COLUMN: Animated 6-Card Stack */}
@@ -295,7 +308,7 @@ export default function Card() {
                                             <div className="card-sub">{c.sub}</div>
                                         </div>
                                         <Link className="apply-btn" href={c.link}>
-                                            Apply
+                                            View More
                                             <svg viewBox="0 0 24 24">
                                                 <path d="M9.5 18l6-6-6-6" />
                                             </svg>

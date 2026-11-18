@@ -6,6 +6,7 @@ import DataBg from "../elements/DataBg"
 import ScrollAnimation from "../elements/ScrollAnimation"
 import Breadcrumb from './Breadcrumb'
 import Sidebar from "./Sidebar"
+import SearchPopup from "./SearchPopup"
 import Footer1 from './footer/Footer1'
 import Header1 from "./header/Header1"
 import Header2 from './header/Header2'
