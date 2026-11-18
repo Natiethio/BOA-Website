@@ -98,7 +98,7 @@ export default function Service() {
                                     </div>
                                     <div className="col-lg-6 col-md-12 col-sm-12 image-column">
                                         <div className="image-box ml_40">
-                                        <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
+                                        {/* <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div> */}
                                         <figure className="image">
                                             <img src="assets/images/service/virtual.png" alt="" />
                                         </figure>
@@ -130,7 +130,7 @@ export default function Service() {
                                     </div>
                                 <div className="col-lg-6 col-md-12 col-sm-12 image-column">
                                     <div className="image-box ml_40">
-                                    <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div>
+                                    {/* <div className="image-shape" style={{ backgroundImage: 'url(assets/images/shape/shape-3.png)' }}></div> */}
                                     <figure className="image">
                                         <img src="assets/images/service/FCYandvirtualcard.png" alt="" />
                                     </figure>
