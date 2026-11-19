@@ -4,6 +4,7 @@ import MissionVision from "@/components/sections/about/MissionVision"
 import CoreValues from "@/components/sections/about/CoreValues"
 import Journey from "@/components/sections/about/Journey"
 import BankFacts from "@/components/sections/about/BankFacts"
+import Leadership from "@/components/sections/about/Leadership"
 
 export default function AboutPage() {
     return (
@@ -29,6 +30,9 @@ export default function AboutPage() {
 
                 {/* Key Figures & Impact (Grid) */}
                 <BankFacts />
+
+                {/* Board of Directors & Management Team */}
+                <Leadership />
 
             </Layout>
         </>

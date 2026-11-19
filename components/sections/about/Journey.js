@@ -116,7 +116,7 @@ export default function Journey() {
                     {/* Section Header */}
                     <div className="sec-title centred mb_50">
                         <h6>Our Story</h6>
-                        <h2>The <span>Journey</span></h2>
+                        <h2>The Journey</h2>
                         {/* <p>Milestones that shaped our legacy</p> */}
                     </div>
 

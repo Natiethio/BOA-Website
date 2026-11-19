@@ -106,7 +106,7 @@ export default function BankFacts() {
                 {/* Section Header */}
                 <div className="sec-title centred mb_50">
                     <h6>Our Reach & Impact</h6>
-                    <h2>Bank of Abyssinia in <span>Numbers</span></h2>
+                    <h2>Bank of Abyssinia in Numbers</h2>
                 </div>
 
                 {/* 6-Card Uniform Grid */}

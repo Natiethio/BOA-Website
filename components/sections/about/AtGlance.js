@@ -22,7 +22,16 @@ export default function AtGlance() {
                                 {/* Floating Box with Smooth Left-to-Right Swinging Animation */}
                                 <div className="glance-floating-badge">
                                     <div className="badge-icon">
-                                        <i className="icon-5"></i>
+                                        <img
+                                            src="assets/images/icons/bank-building.png"
+                                            className="fx-flag-img"
+                                            alt="Bank"
+                                            style={{
+                                                width: "35px",
+                                                height: "35px",
+                                                objectFit: "contain",
+                                            }}
+                                        />
                                     </div>
                                     <div className="badge-text">
                                         <span className="badge-tag"></span>

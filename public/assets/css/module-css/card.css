@@ -392,6 +392,13 @@
   .cards-info {
     max-width: none;
   }
+  .cards-info .lead-text {
+    margin-bottom: 14px;
+  }
+  .contact-lead-note {
+    margin-top: 14px;
+    margin-bottom: 18px;
+  }
   .cards-stack {
     flex: none;
     width: 100%;
@@ -419,12 +426,13 @@
   .cards-info .lead-text {
     font-size: 14px;
     line-height: 1.6;
-    margin: 0 0 14px;
+    margin: 0 0 12px !important;
   }
   .contact-lead-note {
     font-size: 13px;
     line-height: 1.5;
-    margin-bottom: 100px;
+    margin-top: 12px !important;
+    margin-bottom: 16px !important;
   }
   .card-contact-row {
     flex-direction: column;
