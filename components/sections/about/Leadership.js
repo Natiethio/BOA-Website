@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 // Clean SVG Info Icon Component (replaces dollar sign icon)
 const InfoIcon = ({ size = 15, className = "" }) => (
@@ -287,7 +286,7 @@ const managementTeam = [
         id: 'mgt-10',
         name: 'Mr. Abdurahman Kemal',
         role: 'Chief Interest-Free Banking Officer',
-        image: '/assets/images/mangement/IFB officer.jpg',
+        image: '/assets/images/mangement/IFB-officer.jpg',
         description: 'Guides Sharia-compliant banking services, Ameen products, and outreach.',
         qualification: 'M.Sc. in Islamic Banking & Finance, BA in Economics',
         primaryOccupation: 'Chief Interest-Free Banking (Ameen) Officer',
@@ -443,13 +442,10 @@ export default function Leadership() {
                                     >
                                         <div className="card-image-box">
                                             <div className="image-wrap">
-                                                <Image
+                                                <img
                                                     src={director.image}
                                                     alt={director.name}
-                                                    width={500}
-                                                    height={560}
                                                     className="leader-img"
-                                                    priority
                                                 />
                                             </div>
                                             <span className="apex-crown-badge">
@@ -497,11 +493,9 @@ export default function Leadership() {
                                 >
                                     <div className="card-image-box">
                                         <div className="image-wrap">
-                                            <Image
+                                            <img
                                                 src={director.image}
                                                 alt={director.name}
-                                                width={400}
-                                                height={460}
                                                 className="leader-img"
                                             />
                                         </div>
@@ -581,11 +575,9 @@ export default function Leadership() {
                                                         title={`Click to view ${member.name}'s profile`}
                                                     >
                                                         <div className="member-avatar-wrap">
-                                                            <Image
+                                                            <img
                                                                 src={member.image}
                                                                 alt={member.name}
-                                                                width={90}
-                                                                height={90}
                                                                 className="member-avatar"
                                                             />
                                                         </div>
@@ -612,13 +604,10 @@ export default function Leadership() {
                             <div className="ceo-hero-inner">
                                 <div className="ceo-image-container">
                                     <div className="ceo-image-frame">
-                                        <Image
+                                        <img
                                             src={ceoData.image}
                                             alt={ceoData.name}
-                                            width={420}
-                                            height={480}
                                             className="ceo-photo"
-                                            priority
                                         />
                                         <span className="ceo-badge">CEO</span>
                                     </div>
@@ -646,11 +635,9 @@ export default function Leadership() {
                                 >
                                     <div className="card-image-box">
                                         <div className="image-wrap">
-                                            <Image
+                                            <img
                                                 src={officer.image}
                                                 alt={officer.name}
-                                                width={400}
-                                                height={460}
                                                 className="leader-img"
                                             />
                                         </div>
@@ -725,11 +712,9 @@ export default function Leadership() {
                             {/* Left: Leader Portrait Frame */}
                             <div className="modal-image-col">
                                 <div className="modal-photo-frame">
-                                    <Image
+                                    <img
                                         src={selectedLeader.image}
                                         alt={selectedLeader.name}
-                                        width={420}
-                                        height={480}
                                         className="modal-photo"
                                     />
                                     {selectedLeader.badge && (
