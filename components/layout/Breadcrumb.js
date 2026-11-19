@@ -10,7 +10,7 @@ export default function Breadcrumb({ breadcrumbTitle, bgImage, className }) {
             <section className={`page-title centred ${heroClass}`}>
                 <div className="bg-layer" style={{ backgroundImage: `url(${background})` }}></div>
                 <div className="pattern-layer">
-                    <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-18.png)' }}></div>
+                    {/* <div className="pattern-1" style={{ backgroundImage: 'url(assets/images/shape/shape-18.png)' }}></div> */}
                     <div className="pattern-2" style={{ backgroundImage: 'url(assets/images/shape/shape-17.png)' }}></div>
                 </div>
                 <div className="auto-container">
