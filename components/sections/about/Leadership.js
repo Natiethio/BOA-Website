@@ -712,15 +712,131 @@ export default function Leadership() {
                 </div>
             </div>
 
-            {/* ==================== SLIDE-UPWARD BOTTOM SHEET DETAILS (IMAGE 3) ==================== */}
+            {/* ==================== LEADER DETAILS: DESKTOP MODAL + MOBILE BOTTOM SHEET ==================== */}
             {selectedLeader && (
                 <div
-                    className="leader-sheet-overlay"
+                    className="leader-modal-overlay"
                     onClick={(e) => {
                         if (e.target === e.currentTarget) setSelectedLeader(null)
                     }}
                 >
-                    <div className="leader-bottom-sheet">
+                    {/* ===== DESKTOP VIEW: 2-Column Centered Modal Popup ===== */}
+                    <div className="leader-modal-card leader-desktop-modal">
+                        <button
+                            type="button"
+                            className="modal-close-btn"
+                            onClick={() => setSelectedLeader(null)}
+                            aria-label="Close modal"
+                        >
+                            &times;
+                        </button>
+
+                        <div className="modal-body-layout">
+                            {/* Left: Leader Portrait Frame */}
+                            <div className="modal-image-col">
+                                <div className="modal-photo-frame">
+                                    <img
+                                        src={selectedLeader.image}
+                                        alt={selectedLeader.name}
+                                        className="modal-photo"
+                                    />
+                                    {selectedLeader.badge && (
+                                        <span className="modal-badge-tag">{selectedLeader.badge}</span>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Right: Detailed Bio & Qualifications */}
+                            <div className="modal-info-col">
+                                <div className="modal-header-meta">
+                                    <span className="modal-role-pill">{selectedLeader.role}</span>
+                                    <h3 className="modal-leader-name">{selectedLeader.name}</h3>
+                                </div>
+
+                                {selectedLeader.bio && (
+                                    <p className="modal-bio-text">{selectedLeader.bio}</p>
+                                )}
+
+                                <div className="modal-details-grid">
+                                    {selectedLeader.qualification && (
+                                        <div className="detail-item">
+                                            <div className="detail-icon">
+                                                <InfoIcon size={16} />
+                                            </div>
+                                            <div className="detail-content">
+                                                <span className="detail-label">QUALIFICATION</span>
+                                                <p className="detail-value">{selectedLeader.qualification}</p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {selectedLeader.primaryOccupation && (
+                                        <div className="detail-item">
+                                            <div className="detail-icon">
+                                                <InfoIcon size={16} />
+                                            </div>
+                                            <div className="detail-content">
+                                                <span className="detail-label">PRIMARY OCCUPATION</span>
+                                                <p className="detail-value">{selectedLeader.primaryOccupation}</p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {selectedLeader.subcommittees && (
+                                        Array.isArray(selectedLeader.subcommittees)
+                                            ? selectedLeader.subcommittees.length > 0
+                                            : Boolean(selectedLeader.subcommittees)
+                                    ) && (
+                                        <div className="detail-item">
+                                            <div className="detail-icon">
+                                                <InfoIcon size={16} />
+                                            </div>
+                                            <div className="detail-content">
+                                                <span className="detail-label">BOARD SUBCOMMITTEES</span>
+                                                <div className="subcommittees-pills">
+                                                    {(Array.isArray(selectedLeader.subcommittees)
+                                                        ? selectedLeader.subcommittees
+                                                        : [selectedLeader.subcommittees]
+                                                    ).map((sc, idx) => (
+                                                        <span key={idx} className="subcommittee-tag">
+                                                            {sc}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {selectedLeader.keyFocus && selectedLeader.keyFocus.length > 0 && (
+                                        <div className="detail-item">
+                                            <div className="detail-icon">
+                                                <InfoIcon size={16} />
+                                            </div>
+                                            <div className="detail-content">
+                                                <span className="detail-label">KEY FOCUS AREAS</span>
+                                                <div className="subcommittees-pills">
+                                                    {selectedLeader.keyFocus.map((kf, idx) => (
+                                                        <span key={idx} className="subcommittee-tag">
+                                                            {kf}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="modal-footer-brand">
+                                    <span className="modal-brand-label">
+                                        Bank of Abyssinia Choice For All
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ===== MOBILE VIEW: Slide-Up Bottom Sheet (Prototype Image 3) ===== */}
+                    <div className="leader-bottom-sheet leader-mobile-sheet">
                         {/* Drag indicator pill */}
                         <div className="sheet-drag-handle"></div>
 

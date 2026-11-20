@@ -165,7 +165,7 @@ body {
 .boxed_wrapper{
   position: relative;
   margin: 0 auto;
-  overflow: hidden !important;
+  overflow: visible !important;
   width: 100%;
   min-width: 300px;
 }

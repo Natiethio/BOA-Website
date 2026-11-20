@@ -8,7 +8,7 @@ export default function Services() {
               <div className="auto-container">
                 <div className="sec-title light centred mb_60">
                   <h6>Our Services</h6>
-                  <h2>Online Banking at Fingertips</h2>
+                  <h2>Banking at Fingertips</h2>
                 </div>
                 <div className="row clearfix">
                   <div className="col-lg-3 col-md-6 col-sm-12 service-block">

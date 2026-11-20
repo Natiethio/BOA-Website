@@ -1,0 +1,261 @@
+[
+  {
+    "id": "personal",
+    "label": "Personal Banking",
+    "icon": "user",
+    "eyebrow": "Personal Banking",
+    "heading": "Everyday banking, made personal",
+    "description": "Savings, current and salary accounts with debit cards, free transfers and rewards, built around your daily life.",
+    "chips": [
+      "Savings & Current",
+      "Salary Account",
+      "Visa Debit Card",
+      "Amen Interest-Free"
+    ],
+    "links": [
+      {
+        "label": "Explore personal accounts",
+        "href": "/service-details",
+        "isGold": true
+      },
+      {
+        "label": "Open an account",
+        "href": "/service-details-2",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/personalbanking.png",
+    "screen": {
+      "title": "My accounts",
+      "subtitle": "ETB 48,250.00",
+      "rows": [
+        ["Savings ••• 4821", "32,100"],
+        ["Current ••• 1093", "16,150"],
+        ["Salary ••• 7720", "Active"]
+      ],
+      "btnText": "Open an account"
+    }
+  },
+  {
+    "id": "business",
+    "label": "Business Banking",
+    "icon": "bag",
+    "eyebrow": "Business Banking",
+    "heading": "Banking for Business Growth",
+    "description": "Business accounts, merchant payments, payroll and trade finance, everything to run and scale your company.",
+    "chips": [
+      "Business Current",
+      "Merchant Payments",
+      "Payroll",
+      "Trade Finance"
+    ],
+    "links": [
+      {
+        "label": "Explore business solutions",
+        "href": "/service-details-3",
+        "isGold": true
+      },
+      {
+        "label": "Open a business account",
+        "href": "/service-details-4",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/service-2.jpg",
+    "screen": {
+      "title": "Business account",
+      "subtitle": "ETB 1.24M",
+      "rows": [
+        ["Today’s sales", "+84,300"],
+        ["Payroll", "Scheduled"],
+        ["Open invoices", "12"]
+      ],
+      "btnText": "Open a business account"
+    }
+  },
+  {
+    "id": "digital",
+    "label": "Digital Banking",
+    "icon": "phone",
+    "eyebrow": "Digital Banking",
+    "heading": "Your branch, in your pocket",
+    "description": "Transfer money, pay bills, buy airtime and manage cards from the BoA mobile app, any time of day.",
+    "chips": [
+      "Mobile & Internet Banking",
+      "QR Payments",
+      "Airtime & Utilities",
+      "Instant Transfers"
+    ],
+    "links": [
+      {
+        "label": "Learn about the app",
+        "href": "/service-details",
+        "isGold": true
+      },
+      {
+        "label": "Download the app",
+        "href": "/service-details",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/digital_1.png",
+    "screen": {
+      "title": "Total balance",
+      "subtitle": "ETB ••••••",
+      "rows": [
+        ["Transfer within BOA", "→"],
+        ["Pay merchant", "QR"],
+        ["Airtime top-up", "→"]
+      ],
+      "btnText": "Download the app"
+    }
+  },
+  {
+    "id": "virtual",
+    "label": "Virtual Banking",
+    "icon": "mon",
+    "eyebrow": "Virtual Banking",
+    "heading": "Banking that never closes",
+    "description": "Do your banking without visiting a branch. Paperless, automated and available around the clock.",
+    "chips": [
+      "Virtual Bank",
+      "Paperless",
+      "Conventional Robot Service",
+      "24/7 Cash Deposit & Withdrawal"
+    ],
+    "links": [
+      {
+        "label": "Learn about Virtual Banking",
+        "href": "/service-details-3",
+        "isGold": true
+      },
+      {
+        "label": "Find a virtual branch",
+        "href": "/service-details-3",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/virtual.png",
+    "screen": {
+      "title": "Virtual bank",
+      "subtitle": "Open 24/7",
+      "rows": [
+        ["Paperless onboarding", "✓"],
+        ["Robot service", "Online"],
+        ["Cash deposit & withdrawal", "24/7"]
+      ],
+      "btnText": "Find a virtual branch"
+    }
+  },
+  {
+    "id": "loan",
+    "label": "Loan and Credit",
+    "icon": "pct",
+    "eyebrow": "Loan and Credit",
+    "heading": "Credit when you need it",
+    "description": "Personal, vehicle, mortgage and business loans with fast approvals and clear, simple terms.",
+    "chips": [
+      "Instant Loan",
+      "Mortgage",
+      "Vehicle Loan",
+      "Business Loan"
+    ],
+    "links": [
+      {
+        "label": "Compare loan options",
+        "href": "/service-details-5",
+        "isGold": true
+      },
+      {
+        "label": "Apply for a loan",
+        "href": "/service-details-5",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/loan.png",
+    "screen": {
+      "title": "Instant loan",
+      "subtitle": "ETB 150,000",
+      "rows": [
+        ["Term", "12 months"],
+        ["Approval", "In minutes"],
+        ["Collateral", "None"]
+      ],
+      "btnText": "Apply for a loan"
+    }
+  },
+  {
+    "id": "fcy",
+    "label": "FCY and Virtual Card",
+    "icon": "card",
+    "eyebrow": "FCY and Virtual Card",
+    "heading": "Spend and save in any currency",
+    "description": "Hold foreign currency and shop globally online with a virtual card issued to you instantly.",
+    "chips": [
+      "FCY Account",
+      "Virtual Visa Card",
+      "Online Shopping",
+      "Instant Issue"
+    ],
+    "links": [
+      {
+        "label": "Learn about virtual cards",
+        "href": "/service-details-7",
+        "isGold": true
+      },
+      {
+        "label": "Get a virtual card",
+        "href": "/service-details-7",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/FCYandvirtualcard.png",
+    "screen": {
+      "title": "Virtual card",
+      "subtitle": "•••• 8397",
+      "rows": [
+        ["USD", "2,450.00"],
+        ["EUR", "1,120.50"],
+        ["GBP", "640.00"]
+      ],
+      "btnText": "Get a virtual card"
+    }
+  },
+  {
+    "id": "diaspora",
+    "label": "Diaspora Banking",
+    "icon": "globe",
+    "eyebrow": "Diaspora Banking",
+    "heading": "Close to home, wherever you are",
+    "description": "Open accounts, send money home and invest back in Ethiopia with services made for the diaspora.",
+    "chips": [
+      "Diaspora Account",
+      "Remittance",
+      "Mortgage back home",
+      "Dedicated Support"
+    ],
+    "links": [
+      {
+        "label": "Explore diaspora services",
+        "href": "/service-details-6",
+        "isGold": true
+      },
+      {
+        "label": "Open a diaspora account",
+        "href": "/service-details-6",
+        "isGold": false
+      }
+    ],
+    "image": "/assets/images/service/service-3.jpg",
+    "screen": {
+      "title": "Send money home",
+      "subtitle": "$ 500.00",
+      "rows": [
+        ["Fee", "0.00"],
+        ["Arrives", "Instantly"],
+        ["Rate", "Live"]
+      ],
+      "btnText": "Open a diaspora account"
+    }
+  }
+]
