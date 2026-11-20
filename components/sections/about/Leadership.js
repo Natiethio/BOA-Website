@@ -200,7 +200,7 @@ const managementTeam = [
         description: 'Leads digital transformation and innovative banking solutions.',
         qualification: 'M.Sc. in Information Systems, B.Sc. in Computer Science',
         primaryOccupation: 'Chief Digital Banking Officer',
-        keyFocus: ['Mobile & Internet Banking', 'Fintech Partnerships', 'Payment Gateways', 'Digital UX']
+        // keyFocus: ['Mobile & Internet Banking', 'Fintech Partnerships', 'Payment Gateways', 'Digital UX']
     },
     {
         id: 'mgt-2',
@@ -210,7 +210,7 @@ const managementTeam = [
         description: 'Oversees enterprise-level service delivery and operations.',
         qualification: 'MBA in Management, BA in Economics',
         primaryOccupation: 'Chief Enterprise Service Officer',
-        keyFocus: ['Corporate Banking Solutions', 'Operational Infrastructure', 'Service Excellence']
+        // keyFocus: ['Corporate Banking Solutions', 'Operational Infrastructure', 'Service Excellence']
     },
     {
         id: 'mgt-3',
@@ -220,7 +220,7 @@ const managementTeam = [
         description: 'Manages international banking operations and foreign relations.',
         qualification: 'MA in International Trade & Finance, BA in Accounting',
         primaryOccupation: 'Chief International Banking Officer',
-        keyFocus: ['Forex Operations', 'Trade Finance & LC', 'Correspondent Banking', 'Diaspora Remittance']
+        // keyFocus: ['Forex Operations', 'Trade Finance & LC', 'Correspondent Banking', 'Diaspora Remittance']
     },
     {
         id: 'mgt-4',
@@ -230,7 +230,7 @@ const managementTeam = [
         description: 'Leads HR strategy, talent management, and organizational development.',
         qualification: 'MA in Human Resource Management, BA in Public Administration',
         primaryOccupation: 'Chief Corporate HR Officer',
-        keyFocus: ['Talent Acquisition', 'Leadership Academy', 'Employee Welfare', 'Corporate Culture']
+        // keyFocus: ['Talent Acquisition', 'Leadership Academy', 'Employee Welfare', 'Corporate Culture']
     },
     {
         id: 'mgt-5',
@@ -240,7 +240,7 @@ const managementTeam = [
         description: 'Oversees IT infrastructure, systems, and digital innovation.',
         qualification: 'M.Sc. in Computer Engineering, B.Sc. in Electrical Engineering',
         primaryOccupation: 'Chief Information Officer',
-        keyFocus: ['Core Banking Architecture', 'Cybersecurity & DR', 'Cloud Infrastructure', 'Data Analytics']
+        // keyFocus: ['Core Banking Architecture', 'Cybersecurity & DR', 'Cloud Infrastructure', 'Data Analytics']
     },
     {
         id: 'mgt-6',
@@ -250,27 +250,27 @@ const managementTeam = [
         description: 'Manages credit portfolio, risk assessment, and lending operations.',
         qualification: 'M.Sc. in Finance & Investment, BA in Banking & Finance',
         primaryOccupation: 'Chief Credit Business Officer',
-        keyFocus: ['Commercial Lending', 'SME Financing', 'Credit Risk Underwriting', 'Portfolio Quality']
+        // keyFocus: ['Commercial Lending', 'SME Financing', 'Credit Risk Underwriting', 'Portfolio Quality']
     },
     {
         id: 'mgt-7',
-        name: 'Mr. Berhanu Mengistu',
+        name: 'Mr. Desalegn Yizengaw',
+        role: 'Chief Customer Management Officer',
+        image: '/assets/images/mangement/customer.jpg',
+        description: 'Drives customer-centric service excellence across all branches and channels.',
+        qualification: 'MA in Marketing & Communications, BA in Management',
+        primaryOccupation: 'Chief Customer Management Officer',
+        keyFocus: ['Responsible for customer relationship management and service excellence']
+    },
+    {
+        id: 'mgt-8',
+        name: 'Mr. Abreham Gebeyehu',
         role: 'Chief Financial Officer',
         image: '/assets/images/mangement/CFO.jpg',
         description: 'Directs financial planning, budgeting, reporting, and treasury management.',
         qualification: 'ACCA, MBA in Finance, BA in Accounting',
         primaryOccupation: 'Chief Financial Officer',
-        keyFocus: ['Financial Strategy & Reporting', 'Treasury & Liquidity', 'IFRS Compliance', 'Capital Planning']
-    },
-    {
-        id: 'mgt-8',
-        name: 'Mrs. Tigist Abera',
-        role: 'Chief Customer Experience Officer',
-        image: '/assets/images/mangement/customer.jpg',
-        description: 'Drives customer-centric service excellence across all branches and channels.',
-        qualification: 'MA in Marketing & Communications, BA in Management',
-        primaryOccupation: 'Chief Customer Experience Officer',
-        keyFocus: ['Customer Journey Mapping', 'Service Standards', 'Contact Center 24/7', 'Feedback Analytics']
+        // keyFocus: ['Financial Strategy & Reporting', 'Treasury & Liquidity', 'IFRS Compliance', 'Capital Planning']
     },
     {
         id: 'mgt-9',
@@ -348,6 +348,11 @@ export default function Leadership() {
     const [activeTab, setActiveTab] = useState('directors') // 'directors' | 'management'
     const [isExpanded, setIsExpanded] = useState(false)
     const [selectedLeader, setSelectedLeader] = useState(null)
+    const [openCommittee, setOpenCommittee] = useState('sc-1') // Audit Committee open by default on mobile
+
+    const toggleCommittee = (id) => {
+        setOpenCommittee((prev) => (prev === id ? null : id))
+    }
 
     // Reset expansion state when toggling tabs
     const handleTabChange = (tab) => {
@@ -543,56 +548,6 @@ export default function Leadership() {
                                 </span>
                             </button>
                         </div>
-
-                        {/* Board Sub-Committee Members Section */}
-                        <div className="board-subcommittees-wrapper mt_60">
-                            <div className="subcommittees-header text-center mb_35">
-                                <div className="sec-title centred mb_10">
-                                    <h6>Board SUB Committee</h6>
-                                    <h3>Board Sub-Committee <span>Members</span></h3>
-                                </div>
-                                {/* <div className="subcommittee-accent-line"></div> */}
-                            </div>
-
-                            <div className="subcommittees-grid">
-                                {boardSubCommittees.map((committee) => (
-                                    <div key={committee.id} className="committee-card">
-                                        <div className="committee-card-header">
-                                            <h4 className="committee-title">{committee.name}</h4>
-                                            <span className="committee-count-badge">
-                                                {committee.memberIds.length} Members
-                                            </span>
-                                        </div>
-                                        <div className="committee-members-list">
-                                            {committee.memberIds.map((memberId) => {
-                                                const member = boardDirectors.find((d) => d.id === memberId)
-                                                if (!member) return null
-                                                return (
-                                                    <div
-                                                        key={`${committee.id}-${member.id}`}
-                                                        className="committee-member-row"
-                                                        onClick={() => setSelectedLeader(member)}
-                                                        title={`Click to view ${member.name}'s profile`}
-                                                    >
-                                                        <div className="member-avatar-wrap">
-                                                            <img
-                                                                src={member.image}
-                                                                alt={member.name}
-                                                                className="member-avatar"
-                                                            />
-                                                        </div>
-                                                        <div className="member-meta">
-                                                            <h5 className="member-name">{member.name}</h5>
-                                                            <span className="member-role-tag">{member.role}</span>
-                                                        </div>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
                     </div>
                 )}
 
@@ -688,119 +643,190 @@ export default function Leadership() {
                         </div>
                     </div>
                 )}
+
+                {/* ==================== BOARD SUB-COMMITTEE MEMBERS (VISIBLE ON BOTH TABS) ==================== */}
+                <div className="board-subcommittees-wrapper mt_60">
+                    <div className="subcommittees-header text-center mb_35">
+                        <div className="sec-title centred mb_10">
+                            <h6>BOARD SUB-COMMITTEE</h6>
+                            <h2>Board Sub-Committee <span>Members</span></h2>
+                        </div>
+                    </div>
+
+                    <div className="subcommittees-grid">
+                        {boardSubCommittees.map((committee) => {
+                            const isOpen = openCommittee === committee.id
+                            return (
+                                <div
+                                    key={committee.id}
+                                    className={`committee-card ${isOpen ? 'is-open' : 'is-closed'}`}
+                                >
+                                    <div
+                                        className="committee-card-header"
+                                        onClick={() => toggleCommittee(committee.id)}
+                                        role="button"
+                                        tabIndex={0}
+                                        aria-expanded={isOpen}
+                                    >
+                                        <div className="committee-header-left">
+                                            <h4 className="committee-title">{committee.name}</h4>
+                                            <span className="committee-count-badge">
+                                                {committee.memberIds.length} MEMBERS
+                                            </span>
+                                        </div>
+                                        <span className="committee-chevron">
+                                            <ChevronArrow direction={isOpen ? "up" : "down"} size={13} />
+                                        </span>
+                                    </div>
+
+                                    <div className={`committee-members-list ${isOpen ? 'show-members' : 'hide-members'}`}>
+                                        {committee.memberIds.map((memberId) => {
+                                            const member = boardDirectors.find((d) => d.id === memberId)
+                                            if (!member) return null
+                                            return (
+                                                <div
+                                                    key={`${committee.id}-${member.id}`}
+                                                    className="committee-member-row"
+                                                    onClick={() => setSelectedLeader(member)}
+                                                    title={`Click to view ${member.name}'s profile`}
+                                                >
+                                                    <div className="member-avatar-wrap">
+                                                        <img
+                                                            src={member.image}
+                                                            alt={member.name}
+                                                            className="member-avatar"
+                                                        />
+                                                    </div>
+                                                    <div className="member-meta">
+                                                        <h5 className="member-name">{member.name}</h5>
+                                                        <span className="member-role-tag">{member.role}</span>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
 
-            {/* ==================== SMOOTH EASE-OUT PROFILE MODAL ==================== */}
+            {/* ==================== SLIDE-UPWARD BOTTOM SHEET DETAILS (IMAGE 3) ==================== */}
             {selectedLeader && (
                 <div
-                    className="leader-modal-overlay"
+                    className="leader-sheet-overlay"
                     onClick={(e) => {
                         if (e.target === e.currentTarget) setSelectedLeader(null)
                     }}
                 >
-                    <div className="leader-modal-card">
+                    <div className="leader-bottom-sheet">
+                        {/* Drag indicator pill */}
+                        <div className="sheet-drag-handle"></div>
+
+                        {/* Circular Close Button */}
                         <button
                             type="button"
-                            className="modal-close-btn"
+                            className="sheet-close-btn"
                             onClick={() => setSelectedLeader(null)}
-                            aria-label="Close modal"
+                            aria-label="Close"
                         >
                             &times;
                         </button>
 
-                        <div className="modal-body-layout">
-                            {/* Left: Leader Portrait Frame */}
-                            <div className="modal-image-col">
-                                <div className="modal-photo-frame">
+                        <div className="sheet-content-scroll">
+                            {/* Centered Portrait Photo Frame */}
+                            <div className="sheet-photo-wrapper">
+                                <div className="sheet-photo-frame">
                                     <img
                                         src={selectedLeader.image}
                                         alt={selectedLeader.name}
-                                        className="modal-photo"
+                                        className="sheet-photo"
                                     />
-                                    {selectedLeader.badge && (
-                                        <span className="modal-badge-tag">{selectedLeader.badge}</span>
-                                    )}
                                 </div>
                             </div>
 
-                            {/* Right: Detailed Bio & Qualifications */}
-                            <div className="modal-info-col">
-                                <div className="modal-header-meta">
-                                    <span className="modal-role-pill">{selectedLeader.role}</span>
-                                    <h3 className="modal-leader-name">{selectedLeader.name}</h3>
-                                </div>
+                            {/* Centered Role Badge */}
+                            <div className="sheet-role-badge-wrap">
+                                <span className="sheet-role-badge">{selectedLeader.role}</span>
+                            </div>
 
-                                {selectedLeader.bio && (
-                                    <p className="modal-bio-text">{selectedLeader.bio}</p>
+                            {/* Centered Leader Name */}
+                            <h3 className="sheet-leader-name">{selectedLeader.name}</h3>
+
+                            {/* Centered Bio */}
+                            {selectedLeader.bio && (
+                                <p className="sheet-bio-text">{selectedLeader.bio}</p>
+                            )}
+
+                            {/* 3 Detail Cards (as in Prototype Image 3) */}
+                            <div className="sheet-cards-list">
+                                {/* 1. Qualification */}
+                                {selectedLeader.qualification && (
+                                    <div className="sheet-detail-card">
+                                        <div className="sheet-card-icon-circle">
+                                            <span className="gold-ring-dot"></span>
+                                        </div>
+                                        <div className="sheet-card-text">
+                                            <span className="sheet-card-label">QUALIFICATION</span>
+                                            <p className="sheet-card-value">{selectedLeader.qualification}</p>
+                                        </div>
+                                    </div>
                                 )}
 
-                                <div className="modal-details-grid">
-                                    {selectedLeader.qualification && (
-                                        <div className="detail-item">
-                                            <div className="detail-icon">
-                                                <InfoIcon size={16} />
-                                            </div>
-                                            <div className="detail-content">
-                                                <span className="detail-label">QUALIFICATION</span>
-                                                <p className="detail-value">{selectedLeader.qualification}</p>
+                                {/* 2. Primary Occupation */}
+                                {selectedLeader.primaryOccupation && (
+                                    <div className="sheet-detail-card">
+                                        <div className="sheet-card-icon-circle">
+                                            <span className="gold-ring-dot"></span>
+                                        </div>
+                                        <div className="sheet-card-text">
+                                            <span className="sheet-card-label">PRIMARY OCCUPATION</span>
+                                            <p className="sheet-card-value">{selectedLeader.primaryOccupation}</p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* 3. Board Subcommittees */}
+                                {selectedLeader.subcommittees && (
+                                    Array.isArray(selectedLeader.subcommittees)
+                                        ? selectedLeader.subcommittees.length > 0
+                                        : Boolean(selectedLeader.subcommittees)
+                                ) && (
+                                    <div className="sheet-detail-card">
+                                        <div className="sheet-card-icon-circle">
+                                            <span className="gold-ring-dot"></span>
+                                        </div>
+                                        <div className="sheet-card-text">
+                                            <span className="sheet-card-label">BOARD SUBCOMMITTEES</span>
+                                            <div className="sheet-inner-white-box">
+                                                {Array.isArray(selectedLeader.subcommittees)
+                                                    ? selectedLeader.subcommittees.join(', ')
+                                                    : selectedLeader.subcommittees}
                                             </div>
                                         </div>
-                                    )}
+                                    </div>
+                                )}
 
-                                    {selectedLeader.primaryOccupation && (
-                                        <div className="detail-item">
-                                            <div className="detail-icon">
-                                                <InfoIcon size={16} />
-                                            </div>
-                                            <div className="detail-content">
-                                                <span className="detail-label">PRIMARY OCCUPATION</span>
-                                                <p className="detail-value">{selectedLeader.primaryOccupation}</p>
+                                {/* Management Key Focus Areas */}
+                                {selectedLeader.keyFocus && selectedLeader.keyFocus.length > 0 && (
+                                    <div className="sheet-detail-card">
+                                        <div className="sheet-card-icon-circle">
+                                            <span className="gold-ring-dot"></span>
+                                        </div>
+                                        <div className="sheet-card-text">
+                                            <span className="sheet-card-label">KEY FOCUS AREAS</span>
+                                            <div className="sheet-inner-white-box">
+                                                {selectedLeader.keyFocus.join(' • ')}
                                             </div>
                                         </div>
-                                    )}
+                                    </div>
+                                )}
+                            </div>
 
-                                    {selectedLeader.subcommittees && selectedLeader.subcommittees.length > 0 && (
-                                        <div className="detail-item">
-                                            <div className="detail-icon">
-                                                <InfoIcon size={16} />
-                                            </div>
-                                            <div className="detail-content">
-                                                <span className="detail-label">BOARD SUBCOMMITTEES</span>
-                                                <div className="subcommittees-pills">
-                                                    {selectedLeader.subcommittees.map((sc, idx) => (
-                                                        <span key={idx} className="subcommittee-tag">
-                                                            {sc}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {selectedLeader.keyFocus && selectedLeader.keyFocus.length > 0 && (
-                                        <div className="detail-item">
-                                            <div className="detail-icon">
-                                                <InfoIcon size={16} />
-                                            </div>
-                                            <div className="detail-content">
-                                                <span className="detail-label">KEY FOCUS AREAS</span>
-                                                <div className="subcommittees-pills">
-                                                    {selectedLeader.keyFocus.map((kf, idx) => (
-                                                        <span key={idx} className="subcommittee-tag">
-                                                            {kf}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-
-                                <div className="modal-footer-brand">
-                                    <span className="modal-brand-label">
-                                        Bank of Abyssinia Choice For All
-                                    </span>
-                                </div>
+                            {/* Footer Brand */}
+                            <div className="sheet-footer-brand">
+                                <span>Bank of Abyssinia Choice For All</span>
                             </div>
                         </div>
                     </div>
